@@ -43,11 +43,11 @@ if(args.n) {
 } else if (args.s) {
     lat = -args.s;
 } else {
-    console.log('LATITUDE must be in range');
+    console.log('Latitude must be in range');
 }
 
 if(args.n && args.s) {
-    console.log('Provide only one LATITUDE');
+    console.log('Provide only one Latitude');
     process.exit(0);
 }
 
@@ -56,15 +56,22 @@ if(args.e) {
 } else if (args.w) {
     long = -args.w;
 } else {
-    console.log('LONGITUDE must be in range');
+    console.log('Longitude must be in range');
 }
 
 if(args.e && args.w) {
-    console.log('Provide only one LONGITUDE');
+    console.log('Provide only one Longitude');
     process.exit(0);
 }
 
-const res = await fetch(url + 'latitude=' + `${latitude}` + '&longitude=' + `${longitude}` + '&daily=precipitation_hours&timezone=' + timezone);
+const response =
+    await fetch(
+    'https://api.open-meteo.com/v1/forecast?latitude='
+    + lat
+    + '&longitude='
+    + long +
+    '&daily=precipitation_hours&timezone='
+    + timezone);
 const data = await response.json()
 
 if (args.j) {
@@ -78,21 +85,21 @@ const precip = data.daily.precipitation_hours;
 let num_days;
 
 if (days > 1) {
-     day_str = "In " + days + " Days";
-} else if (days > 1) {
-     dat_str = "Today"
+     num_days = "in " + days + " days";
+} else if (days == 0) {
+     num_days = "today"
 } else {
-    day_str = "Tomorrow";
+    num_days = "tomorrow";
 }
 
 if (!days) {
-    if (precipitation_hours_data[1] > 0) {
-        console.log('You might need your galoshes ' + day_str);
+    if (precip[1] > 0) {
+        console.log('You might need your galoshes ' + num_days);
     } else {
-        console.log('You will not need your galoshes ' + day_str);
+        console.log('You will not need your galoshes ' + num_days);
     }
-} else if (precipitation_hours_data[days] > 0) {
-    console.log('You might need your galoshes ' + day_str);
+} else if (precip[days] > 0) {
+    console.log('You might need your galoshes ' + num_days);
 } else {
-    console.log('You will not need your galoshes ' + day_str);
+    console.log('You will not need your galoshes ' + num_days);
 }

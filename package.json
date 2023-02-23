@@ -22,7 +22,7 @@
     "node-fetch": "^3.3.0"
   },
   "bin": {
-    "galosh.js": "./cli.js"
+    "galosh.js": "cli.js"
   },
   "type": "module"
 }

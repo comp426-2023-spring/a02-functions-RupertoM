@@ -10,12 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/comp426-2023-spring/a02-functions-RupertoM.git"
   },
-  "author": "RupertoM",
+  "author": "Ruperto Martinez",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/comp426-2023-spring/a02-functions-RupertoM/issues"
   },
-  "homepage": "https://github.com/comp426-2023-spring/a02-functions-RupertoM#readme"
+  "homepage": "https://github.com/comp426-2023-spring/a02-functions-RupertoM#readme",
   "dependencies": {
     "minimist": "^1.2.7",
     "moment-timezone": "^0.5.40",

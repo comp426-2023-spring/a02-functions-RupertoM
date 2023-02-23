@@ -73,7 +73,7 @@ const response =
     + long +
     '&daily=precipitation_hours&timezone='
     + timezone);
-const data = await response.json()
+const data = await response.json();
 
 if (args.j) {
     console.log(data);

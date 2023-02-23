@@ -1,7 +1,7 @@
 {
   "name": "a02-functions-RupertoM",
-  "version": "1.0.0",
-  "description": "This assignment will help you learn to create an installable Node.js command line utility.",
+  "version": "0.0.1",
+  "description": "COMP 426 A2",
   "main": "galosh.js",
   "scripts": {
     "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"

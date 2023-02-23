@@ -36,8 +36,8 @@ if (args.h) {
 	process.exit(0);
 }
 
-let lat
-let long
+let lat;
+let long;
 
 if(args.n) {
     lat = args.n;

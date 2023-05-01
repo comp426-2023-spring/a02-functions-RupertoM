@@ -19,6 +19,7 @@ if (args.h){
 }
 
 let timezone;
+
 if (args.t) {
     timezone = args.t;
 } else {
@@ -71,7 +72,6 @@ if (args.j) {
 
 const days = args.d;
 const precip = data.daily.precipitation_hours;
-
 let num_days;
 
 if (days > 1) {
